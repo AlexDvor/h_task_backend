@@ -11,7 +11,6 @@ const getCurrent = async (req, res) => {
       user: {
         name: result.name,
         email: result.email,
-        subscription: result.subscription,
       },
     },
   });

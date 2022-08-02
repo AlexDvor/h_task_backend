@@ -22,5 +22,4 @@ const addFavoriteMovie = async (req, res, next) => {
   }
 };
 
-// http://localhost:4040/api/users/add
 module.exports = addFavoriteMovie;

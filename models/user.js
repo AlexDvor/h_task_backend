@@ -9,9 +9,9 @@ const userSchema = new Schema(
       required: [true, "Name is required"],
     },
 
-    password: {
+    surname: {
       type: String,
-      required: [true, "Password is required"],
+      required: [true, "Surname is required"],
     },
 
     email: {
@@ -20,33 +20,15 @@ const userSchema = new Schema(
       unique: true,
     },
 
-    subscription: {
+    password: {
       type: String,
-      enum: ["starter", "pro", "business"],
-      default: "starter",
+      required: [true, "Password is required"],
     },
 
     token: {
       type: String,
       default: null,
     },
-
-    avatarURL: {
-      type: String,
-      required: true,
-    },
-
-    verify: {
-      type: Boolean,
-      default: false,
-    },
-
-    verifyToken: {
-      type: String,
-      required: [true, "Verify token is required"],
-    },
-
-    favorite: [],
   },
   { versionKey: false, timestamps: true }
 );
