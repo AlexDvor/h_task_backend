@@ -1,6 +1,5 @@
 const { Schema, model } = require("mongoose");
 const bcrypt = require("bcrypt");
-const { number } = require("joi");
 
 const userSchema = new Schema(
   {
