@@ -4,11 +4,12 @@ const mongoose = require("mongoose");
 
 const updateUserById = async (req, res, next) => {
   try {
-    const { id } = req.params;
-    console.log("🚀 - id", id);
-    const isValidId = mongoose.Types.ObjectId.isValid(id);
-    if (!isValidId) throw new NotFound(`Contact with id: ${id} not found`);
-    const result = await User.findByIdAndUpdate(id);
+    const { userId } = req.params;
+    const isValidId = mongoose.Types.ObjectId.isValid(userId);
+    if (!isValidId) throw new NotFound(`Contact with id: ${userId} not found`);
+    const result = await User.findByIdAndUpdate(userId, req.body, {
+      new: true,
+    });
     res.json({
       data: result,
     });

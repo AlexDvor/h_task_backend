@@ -9,11 +9,13 @@
 
 const getAllUsers = require("./getAllUsers");
 const updateUserById = require("./updateUserById");
+const removeUserById = require("./removeUserById");
 
 module.exports = {
   // getCurrent,
   // updateSubscription,
   // updateAvatar,
+  removeUserById,
   updateUserById,
   // verifyEmail,
   // verificationByRequest,

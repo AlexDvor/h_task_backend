@@ -5,8 +5,9 @@ const { users: ctrl } = require("../../controllers");
 const { subJoiSchema, emailJoiSchema } = require("../../schemas");
 
 // router.get("/current", auth, ctrl.getCurrent);
-router.put("/u", auth, ctrl.updateUserById);
+router.put("/update/:userId", auth, ctrl.updateUserById);
 router.get("/all", auth, ctrl.getAllUsers);
+router.delete("/delete/:userId", auth, ctrl.removeUserById);
 // router.get("/verify/:verifyToken", ctrl.verifyEmail);
 // router.get("/favorite/get", auth, ctrl.getFavoriteList);
 // router.delete("/favorite/remove/:movieId", auth, ctrl.removeFavoriteMovie);
