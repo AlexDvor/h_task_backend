@@ -1,6 +1,6 @@
 const { User } = require("../../models");
 
-const getCurrent = async (req, res) => {
+const getCurrentUser = async (req, res) => {
   const { _id } = req.user;
   const result = await User.findOne({ _id });
 
@@ -8,12 +8,10 @@ const getCurrent = async (req, res) => {
     status: "success",
     code: 200,
     data: {
-      user: {
-        name: result.name,
-        email: result.email,
-      },
+      name: result.name,
+      email: result.email,
     },
   });
 };
 
-module.exports = getCurrent;
+module.exports = getCurrentUser;
