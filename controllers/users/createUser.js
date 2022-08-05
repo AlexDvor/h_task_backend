@@ -6,7 +6,7 @@ const createUser = async (req, res, next) => {
   try {
     const { name, email, password, surname } = req.body;
     const user = await User.findOne({ email });
-    if (user) throw new Conflict(`This email in use`);
+    if (user) throw new Conflict(`User with this email already exists`);
     const hashPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 
     const result = await User.create({

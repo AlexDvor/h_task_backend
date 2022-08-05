@@ -4,8 +4,8 @@ const { validation, auth } = require("../../middlewares/index");
 const { auth: ctrl } = require("../../controllers/index");
 const { registerJoiSchema, loginJoiSchema } = require("../../schemas");
 
-router.post("/signup", validation(registerJoiSchema), ctrl.register);
-router.post("/login", validation(loginJoiSchema), ctrl.login);
-router.get("/logout", auth, ctrl.logout);
+router.post("/sign-up", validation(registerJoiSchema), ctrl.register);
+router.post("/log-in", validation(loginJoiSchema), ctrl.login);
+router.get("/log-out", auth, ctrl.logout);
 
 module.exports = router;
